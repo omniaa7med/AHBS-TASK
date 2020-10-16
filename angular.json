@@ -28,9 +28,11 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           },
           "configurations": {
             "production": {
@@ -123,6 +125,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "AHBS-TASK"
+    }
+  },
+  "defaultProject": "AHBS-TASK",
+  "cli": {
+    "analytics": "8ae57bdb-d557-4fdf-87db-1a202aa41c1c"
+  }
 }
