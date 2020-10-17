@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { AddEmployeeComponent } from './employee/add-employee/add-employee.component';
 import { SearchEmployeeComponent } from './employee/search-employee/search-employee.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import { SearchEmployeeComponent } from './employee/search-employee/search-emplo
     SearchEmployeeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
