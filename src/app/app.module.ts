@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from '../app/shared/navbar/navbar.component';
 import { SidebarComponent } from '../app/shared/sidebar/sidebar.component';
@@ -7,6 +7,9 @@ import { EmployeeComponent } from './employee/employee.component';
 import { AddEmployeeComponent } from './employee/add-employee/add-employee.component';
 import { SearchEmployeeComponent } from './employee/search-employee/search-employee.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FooterComponent } from './shared/footer/footer.component';
+
+
 
 @NgModule({
   declarations: [
@@ -14,14 +17,20 @@ import { AppRoutingModule } from './app-routing.module';
     NavbarComponent,
     SidebarComponent,
     EmployeeComponent,
-    AddEmployeeComponent,
-    SearchEmployeeComponent
+    // AddEmployeeComponent,
+    // SearchEmployeeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
+
 })
 export class AppModule { }
