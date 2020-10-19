@@ -1,3 +1,7 @@
+<!----------------------------------------------------------------------------->
+<!--                           if no data in table                           -->
+<!----------------------------------------------------------------------------->
+
 <div *ngIf="this.allEmp.length == 0;" class="search-employee_no-data">
 
     <div class="search-employee_no-data_paragraph">
@@ -7,13 +11,22 @@
         <button class="btn  btn-primary" routerLink="/add-employee">Add
             Employee</button> </div>
 </div>
+
+<!----------------------------------------------------------------------------->
+<!--                           if exist data in table                        -->
+<!----------------------------------------------------------------------------->
+
 <section class="search-employee-wrapper" *ngIf="this.allEmp.length != 0;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <form [formGroup]="EmpSearchForm" (ngSubmit)="search(EmpSearchForm)">
                     <div class="row align-items-center">
-                        <!-- ------------------------------Emp NAme------------------------------- -->
+
+                        <!----------------------------------------------------------------------------->
+                        <!--                                 Emp NAme                                -->
+                        <!----------------------------------------------------------------------------->
+
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="Empname">Employee Name</label>
@@ -21,7 +34,11 @@
                                     placeholder="Name" required>
                             </div>
                         </div>
-                        <!-- ------------------------------Department------------------------------- -->
+
+                        <!----------------------------------------------------------------------------->
+                        <!--                                 Department                              -->
+                        <!----------------------------------------------------------------------------->
+
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="departmentemp">Department</label>
@@ -40,7 +57,9 @@
                     </div>
                 </form>
             </div>
-            <!-- ------------------------------Table------------------------------- -->
+            <!----------------------------------------------------------------------------->
+            <!--                                 Table                                   -->
+            <!----------------------------------------------------------------------------->
             <div class="col-md-10">
                 <table class="table table-striped">
                     <thead>
