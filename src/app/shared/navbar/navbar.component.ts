@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-
+  dateToday: any = new Date() ;
+  formattedDate = this.dateToday.toLocaleDateString('en-GB', {
+    day: 'numeric', month: 'short', year: 'numeric'
+  }).replace(/ /g, '-');
   constructor() { }
 
   ngOnInit(): void {
