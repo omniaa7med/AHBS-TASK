@@ -8,9 +8,9 @@ import { AddEmployeeComponent } from './employee/add-employee/add-employee.compo
 import { SearchEmployeeComponent } from './employee/search-employee/search-employee.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './shared/footer/footer.component';
-
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -28,6 +28,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     RouterModule,
     NgbModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent],
