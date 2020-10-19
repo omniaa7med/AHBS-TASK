@@ -13,6 +13,11 @@ export class AddEmployeeComponent implements OnInit {
 
   EmpForm: FormGroup;
   allEmp = [];
+
+  /* -------------------------------------------------------------------------- */
+  /*                                GET-DATE-TODAY                              */
+  /* -------------------------------------------------------------------------- */
+
   planModel: any = { start_time: new Date() };
   formattedDate = this.planModel['start_time'].toLocaleDateString('en-GB', {
     day: 'numeric', month: 'short', year: 'numeric'
@@ -31,8 +36,13 @@ export class AddEmployeeComponent implements OnInit {
       gender: ["", Validators.required],
       date: [this.formattedDate, Validators.required],
     });
-    console.log(this.formattedDate)
+    // console.log(this.formattedDate)
   }
+
+  /* -------------------------------------------------------------------------- */
+  /*                            ADD-EMPLOYEE-SUBMIT                             */
+  /* -------------------------------------------------------------------------- */
+
   onSubmit(form) {
     console.log(form)
     let Employee = {
@@ -44,6 +54,6 @@ export class AddEmployeeComponent implements OnInit {
     }
     console.log(Employee);
     this.EmployeeService.AddEmp(Employee);
-    form.reset();  
+    form.reset();
   }
 }

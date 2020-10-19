@@ -1,30 +1,51 @@
-<app-navbar></app-navbar>
 <div class="container-fluid">
     <div class="row">
-        <app-sidebar></app-sidebar>
-        <main role="main" class="mt-5 col-md-9 ml-sm-auto col-lg-10 px-4">
-            <div class="tabs-wrapper">
-                <div class="container">
-                    <ul class="list-group mt-0 list-group-horizontal">
-                        <li class="pr-2">
-                            <a class="nav-link" routerLink="/add-employee" >Add
-                                Employee</a>
-                        </li>
-                        <li class="pr-2">
-                            <a class="nav-link"routerLink="/search-employee">Search
-                                Employee</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <div class="col-lg-12">
+            <!----------------------------------------------------------------------------->
+            <!--                                  NAvBAR                                 -->
+            <!----------------------------------------------------------------------------->
+            <app-navbar></app-navbar>
             <div class="row">
-                <div class="container">
-                    <div class="employee-wrapper mt-3">
-                        <router-outlet></router-outlet>
+                <!----------------------------------------------------------------------------->
+                <!--                                  SIDEBAR                                -->
+                <!----------------------------------------------------------------------------->
+                <app-sidebar></app-sidebar>
+                <!----------------------------------------------------------------------------->
+                <!--                              EMPLOYEE-SECTION                           -->
+                <!----------------------------------------------------------------------------->
+                <div class="col-lg-12">
+                    <div class="row employee-wrapper">
+                        <main role="main" class=" col-lg-12">
+                            <div class="tabs-wrapper nav-tabs">
+                                <div class="container">
+                                    <ul class="list-group mt-0 list-group-horizontal">
+                                        <li class="pr-2 nav-item">
+                                            <a class="nav-link" [routerLink]="['/add-employee']"
+                                                routerLinkActive="active">Add
+                                                Employee</a>
+                                        </li>
+                                        <li class="pr-2 nav-item">
+                                            <a class="nav-link" [routerLink]="['/search-employee']"
+                                                routerLinkActive="active">Search Employee</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!----------------------------------------------------------------------------->
+                            <!--                             ROUTER-OUTLET                               -->
+                            <!----------------------------------------------------------------------------->
+                            <div class="row employee-outlet">
+                                <div class="container">
+                                    <div class="employee-wrapper">
+                                        <router-outlet></router-outlet>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+                        <app-footer></app-footer>
                     </div>
                 </div>
             </div>
-        </main>
-        <app-footer></app-footer>
+        </div>
     </div>
 </div>

@@ -5,7 +5,7 @@
                 <form [formGroup]="EmpForm" (ngSubmit)="onSubmit(EmpForm)">
                     <div class="row">
                         <!-- ------------------------------Emp NAme------------------------------- -->
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="Empname">Employee Name</label>
                                 <input formControlName="Empname" type="text" class="form-control" id="Empname"
@@ -13,7 +13,7 @@
                             </div>
                         </div>
                         <!-- ------------------------------Department------------------------------- -->
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="deparmentemp">Deparment</label>
                                 <select formControlName="deparment" class="custom-select d-block w-100"
@@ -25,16 +25,18 @@
                                 </select>
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
                         <!-- ------------------------------Emp Code------------------------------- -->
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="EmpCode">Employee code</label>
-                                <input formControlName="EmpCode" placeholder="please add postive number" type="number" class="form-control" id="EmpCode" min="0"
-                                    oninput="validity.valid||(value='');">
+                                <input formControlName="EmpCode" placeholder="please add postive number" type="number"
+                                    class="form-control" id="EmpCode" min="0" oninput="validity.valid||(value='');">
                             </div>
                         </div>
                         <!-- ------------------------------Emp Birthday------------------------------- -->
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="EmpCode">Birthday</label>
                                 <div class="input-group" *ngIf='planModel'>
@@ -43,29 +45,30 @@
                                     <div class="input-group-append">
                                         <button class="btn btn-outline-secondary calendar" (click)="date.toggle()"
                                             type="button">
-                                        <img src="../../../assets/img/calendar.svg" alt="calender">
-                                    </button>
+                                            <img src="../../../assets/img/calendar.svg" alt="calender">
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- ------------------------------Emp Gemder------------------------------- -->
-                        <div class="col-md-12">
-                            <div class="form-group d-flex align-items-baseline">
-                                <div class=" p-0 custom-control custom-radio custom-control-inline">
-                                    <h5>Gender</h5>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" formControlName='gender' name="gender" id="male" value="male">
-                                    <label class="form-check-label" for="male">Male</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" formControlName='gender' name="gender" id="female"
-                                        value="female">
-                                    <label class="form-check-label" for="female">Female</label>
-                                </div>
-                                <button type="submit" class="btn btn-primary" [disabled]="EmpForm.invalid">ADD</button>
+                    </div>
+                    <!-- ------------------------------Emp Gemder------------------------------- -->
+                    <div class="row">
+                        <div class="form-group d-flex align-items-baseline">
+                            <div class=" p-0 custom-control custom-radio custom-control-inline">
+                                <h5>Gender</h5>
                             </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" formControlName='gender' name="gender"
+                                    id="male" value="male">
+                                <label class="form-check-label" for="male">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" formControlName='gender' name="gender"
+                                    id="female" value="female">
+                                <label class="form-check-label" for="female">Female</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary" [disabled]="EmpForm.invalid">ADD</button>
                         </div>
                     </div>
                 </form>
