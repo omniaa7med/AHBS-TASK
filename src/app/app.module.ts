@@ -9,6 +9,8 @@ import { SearchEmployeeComponent } from './employee/search-employee/search-emplo
 import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './shared/footer/footer.component';
 
+import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { FooterComponent } from './shared/footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    RouterModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

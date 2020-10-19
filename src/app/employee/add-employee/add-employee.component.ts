@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder, Validators, FormGroup } from "@angular/forms";
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-add-employee',
@@ -8,9 +10,28 @@ import { Router } from '@angular/router';
 })
 export class AddEmployeeComponent implements OnInit {
 
-  constructor() { }
+  EmpForm: FormGroup;
+  planModel: any = { start_time: new Date() };
+  formattedDate = this.planModel['start_time'].toLocaleDateString('en-GB', {
+    day: 'numeric', month: 'short', year: 'numeric'
+  }).replace(/ /g, '-');
+
+  constructor(
+    private formBuilder: FormBuilder,
+  ) { }
 
   ngOnInit(): void {
+    this.EmpForm = this.formBuilder.group({
+      Empname: ["", Validators.required],
+      deparment: ["", Validators.required],
+      EmpCode: [""],
+      gender: [""],
+      date: [this.formattedDate],
+    });
+    console.log(this.formattedDate)
   }
+  onSubmit(form) {
+    console.log(form)
 
+  }
 }

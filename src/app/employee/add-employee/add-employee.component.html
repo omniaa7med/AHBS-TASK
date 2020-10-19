@@ -1,1 +1,74 @@
-<p>add-employee works!</p>
+<section class="add-employee-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <form [formGroup]="EmpForm" (ngSubmit)="onSubmit(EmpForm)">
+                    <div class="row">
+                        <!-- ------------------------------Emp NAme------------------------------- -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Empname">Employee Name</label>
+                                <input formControlName="Empname" type="text" class="form-control" id="Empname"
+                                    placeholder="Name" required>
+                            </div>
+                        </div>
+                        <!-- ------------------------------Department------------------------------- -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="deparmentemp">Deparment</label>
+                                <select formControlName="deparment" class="custom-select d-block w-100"
+                                    id="deparmentemp" required>
+                                    <option selected>Choose...</option>
+                                    <option value="Development">Development</option>
+                                    <option value="Design">Design</option>
+                                    <option value="Testing">Testing</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- ------------------------------Emp Code------------------------------- -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="EmpCode">Employee code</label>
+                                <input formControlName="EmpCode" type="number" class="form-control" id="EmpCode" min="0"
+                                    oninput="validity.valid||(value='');">
+                            </div>
+                        </div>
+                        <!-- ------------------------------Emp Birthday------------------------------- -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="EmpCode">Birthday</label>
+                                <div class="input-group" *ngIf='planModel'>
+                                    <input class="form-control" formControlName="date" name="date" [value]="date"
+                                        ngbDatepicker placeholder="{{formattedDate}}" #date="ngbDatepicker">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary calendar" (click)="date.toggle()"
+                                            type="button"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ------------------------------Emp Gemder------------------------------- -->
+                        <div class="col-md-12">
+                            <div class="form-group d-flex align-items-baseline">
+                                <div class=" p-0 custom-control custom-radio custom-control-inline">
+                                    <h5>Gender</h5>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" formControlName="gender" id="Female" name="gender"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="Female">Female</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" formControlName="gender" id="Male" name="gender"
+                                        class="custom-control-input">
+                                    <label class="custom-control-label" for="Male">Male</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">ADD</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

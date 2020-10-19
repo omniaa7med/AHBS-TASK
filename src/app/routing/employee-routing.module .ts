@@ -2,14 +2,14 @@ import { Routes, RouterModule } from "@angular/router";
 
 export const employees_ROUTES: Routes = [
   {
-    path: "/add-employee",
+    path: "add-employee",
     loadChildren: () =>
       import(
         "../modules/add-employee.module"
       ).then((m) => m.AddEmployeeModuel),
   },
   {
-    path: "/search-employee",
+    path: "search-employee",
     loadChildren: () =>
       import(
         "../modules/search-employee.module"
