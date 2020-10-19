@@ -4,8 +4,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from '../app/shared/navbar/navbar.component';
 import { SidebarComponent } from '../app/shared/sidebar/sidebar.component';
 import { EmployeeComponent } from './employee/employee.component';
-import { AddEmployeeComponent } from './employee/add-employee/add-employee.component';
-import { SearchEmployeeComponent } from './employee/search-employee/search-employee.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './shared/footer/footer.component';
 import { RouterModule } from '@angular/router';
@@ -19,8 +17,6 @@ import { CommonModule } from '@angular/common';
     NavbarComponent,
     SidebarComponent,
     EmployeeComponent,
-    // AddEmployeeComponent,
-    // SearchEmployeeComponent,
     FooterComponent
   ],
   imports: [
